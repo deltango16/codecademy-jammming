@@ -16,6 +16,18 @@ import Playlist from '../Playlist/Playlist';
 import './App.css';
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+
+		// Check if correct (step 31)
+		/* Inside of the App component, set a hard-coded initial value for this.state.searchResults.
+			 Inside of the App constructor, set this.state to an object with a property called searchResults set to an array of objects,
+			 each containing name, artist, and album properties. */
+		this.state = {
+			searchResults: ['name', 'artist', 'album']
+		}
+	}
+
 	render() {
 		return (
 			<div>
@@ -23,7 +35,7 @@ class App extends Component {
 				<div className="App">
 					<SearchBar />
 					<div className="App-playlist">
-						<SearchResults />
+						<SearchResults searchResults={ this.state.searchResults } />
 						<Playlist />
 					</div>
 				</div>
